@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Show Github User Details" style="width: 100%;">
+        <div if:true={user.id}>
+            <img src={user.image} height="200" width="200" />
+            <div class="slds-var-p-vertical_xxx-small slds-text-heading_large">{user.name}</div>
+            <div class="slds-var-p-vertical_xxx-small slds-text-heading_small">About: {user.about}</div>
+            <div class="slds-var-p-vertical_xxx-small slds-text-heading_small">Repos: {user.repos}</div>
+            <div class="slds-var-p-vertical_xxx-small slds-text-heading_small">Followers: {user.followers}</div>
+        </div>
+        <p slot="footer">
+            <lightning-layout pull-to-boundary="small">
+                <lightning-layout-item padding="horizontal-small" flexibility="grow">
+                    <lightning-input
+                        type="Search"
+                        placeholder="@Username"
+                        variant="label-hidden"
+                        label="Enter User Name"
+                        onchange={storeUserName}
+                        required>
+                    </lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item padding="horizontal-small">
+                    <lightning-button
+                        variant="Success"
+                        label="Search"
+                        onclick={searchProfile}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </p>
+    </lightning-card>
+</template>

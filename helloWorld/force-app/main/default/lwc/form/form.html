@@ -1,0 +1,14 @@
+<template>
+    
+    <form>
+        <lightning-input type="text" label="Account Name" onchange={handleName}></lightning-input>
+        <lightning-input type="text" label="Rating" onchange={handleRating}></lightning-input>
+        <lightning-input type="text" label="Phone" onchange={handlePhone}></lightning-input>
+        <lightning-button variant="brand" label="Create" title="Primary action" onclick={submit}
+            class="slds-m-left_x-small"></lightning-button>
+    </form>
+
+    <c-practice getvalue={value}></c-practice>
+    <c-practice ongetsearchvalue={handleSearchValue}></c-practice>
+    <p>{searchValue}</p>
+</template>
